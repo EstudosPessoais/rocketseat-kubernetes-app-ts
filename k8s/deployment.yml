@@ -7,10 +7,10 @@ metadata:
 spec:
   replicas: 10
   strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 2
-      maxUnavailable: 1 
+    type: Recreate
+    # rollingUpdate:
+    #   maxSurge: 2
+    #   maxUnavailable: 1 
   selector:
     matchLabels:
       api: app-ts
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: app-ts
-          image: bielb1b2/app-ts:v1
+          image: bielb1b2/app-ts:v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
