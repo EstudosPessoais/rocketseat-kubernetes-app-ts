@@ -4,5 +4,5 @@ kind: ConfigMap
 metadata:
   name: app-ts
 data:
-  app-name: rockeseat-app
+  APP: rockeseat-app
   
